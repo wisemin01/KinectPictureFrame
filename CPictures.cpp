@@ -11,13 +11,7 @@ CPictures::CPictures()
 	  m_iChangeXPos		(0),
 	  m_iCurrentState	(E_IDLE),
 	  m_pTextures		(nullptr),
-	  m_dwLastOperate	(timeGetTime()),
-
-	  // Kenect
-	  
-	  m_handState		  (HandState_Unknown),
-	  m_vHandPosition	  (D3DXVECTOR2(0,0)),
-	  m_vFirstLockPosition(D3DXVECTOR2(0,0))
+	  m_dwLastOperate	(timeGetTime())
 {
 	Init();
 }
@@ -37,12 +31,22 @@ void CPictures::Init()
 
 	// 사진의 개수를 알아옴
 	m_iMaxImageCount = m_pTextures->size() - 1;
+
+	for (int i = 0; i < 6; i++)
+	{
+		m_handState[i] = HandState_Unknown;
+		m_vHandPosition[i] = D3DXVECTOR2(0, 0);
+		m_vFirstLockPosition[i] = D3DXVECTOR2(0, 0);
+	}
 }
 
 void CPictures::Update()
 {
-	m_handState = INPUTMANAGER->GetHandState(0, CInputManager::E_HAND_RIGHT);
-	m_vHandPosition = INPUTMANAGER->GetHandPosition(0, CInputManager::E_HAND_RIGHT);
+	for (int i = 0; i < 6; i++)
+	{
+		m_handState[i] = INPUTMANAGER->GetHandState(i, CInputManager::E_HAND_RIGHT);
+		m_vHandPosition[i] = INPUTMANAGER->GetHandPosition(i, CInputManager::E_HAND_RIGHT);
+	}
 
 	// 자동으로 사진 갱신 ( 인자 : 딜레이 )
 	UpdateFrameTimer(30000);
@@ -86,10 +90,6 @@ void CPictures::UpdateFrameTimer(DWORD dwDelay)
 // 이미지 전환을 위한 입력 관련 모음
 void CPictures::InputProcessing()
 {
-	static HandState prevHandState;
-
-	prevHandState = m_handState;
-
 	if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
 	{
 		m_iCurrentState = E_CHANGE_FRAME; m_bChangeWay = E_RIGHT;
@@ -99,25 +99,33 @@ void CPictures::InputProcessing()
 		m_iCurrentState = E_CHANGE_FRAME; m_bChangeWay = E_LEFT;
 	}
 
-	if (prevHandState == HandState_Open && m_handState == HandState_Closed) {
-		m_vFirstLockPosition = m_vHandPosition;
-	}
+	for (int i = 0; i < 6; i++)
+	{
+		static HandState prevHandState[6];
 
-	if (prevHandState == HandState_Closed && m_handState == HandState_Open) {
-		int Length = pow(m_vHandPosition.x - m_vFirstLockPosition.x, 2) + pow(m_vHandPosition.y - m_vFirstLockPosition.y, 2);
+		prevHandState[i] = m_handState[i];
 
-		Length = sqrt(Length);
+		if (prevHandState[i] == HandState_Open && m_handState[i] == HandState_Closed) {
+			m_vFirstLockPosition[i] = m_vHandPosition[i];
+		}
 
-		if (Length > 200)
-		{
-			m_iCurrentState = E_CHANGE_FRAME;
+		if (prevHandState[i] == HandState_Closed && m_handState[i] == HandState_Open) {
+			int Length = pow(m_vHandPosition[i].x - m_vFirstLockPosition[i].x, 2)
+				+ pow(m_vHandPosition[i].y - m_vFirstLockPosition[i].y, 2);
 
-			if (m_vHandPosition.x > m_vFirstLockPosition.x)
-				// 왼쪽
-				m_bChangeWay = E_LEFT;
-			else
-				// 오른쪽
-				m_bChangeWay = E_RIGHT;
+			Length = sqrt(Length);
+
+			if (Length > 100)
+			{
+				m_iCurrentState = E_CHANGE_FRAME;
+
+				if (m_vHandPosition[i].x > m_vFirstLockPosition[i].x)
+					// 왼쪽
+					m_bChangeWay = E_LEFT;
+				else
+					// 오른쪽
+					m_bChangeWay = E_RIGHT;
+			}
 		}
 	}
 }

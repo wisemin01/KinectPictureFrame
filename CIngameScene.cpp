@@ -17,8 +17,10 @@ CIngameScene::~CIngameScene()
 
 void CIngameScene::Init()
 {
-	m_LHCircle = new CHandCircle(CInputManager::HAND_SET::E_HAND_LEFT);
-	m_RHCircle = new CHandCircle(CInputManager::HAND_SET::E_HAND_RIGHT);
+	for (int i = 0; i < 6; i++) {
+		m_LHCircle[i] = new CHandCircle(CInputManager::HAND_SET::E_HAND_LEFT, i);
+		m_RHCircle[i] = new CHandCircle(CInputManager::HAND_SET::E_HAND_RIGHT, i);
+	}
 
 	m_pPictures = new CPictures();
 }
@@ -27,8 +29,10 @@ void CIngameScene::Update()
 {
 	m_pPictures->Update();
 
-	m_LHCircle->Update();
-	m_RHCircle->Update();
+	for (int i = 0; i < 6; i++) {
+		m_LHCircle[i]->Update();
+		m_RHCircle[i]->Update();
+	}
 }
 
 void CIngameScene::Render()
@@ -36,8 +40,10 @@ void CIngameScene::Render()
 
 	m_pPictures->Render();
 
-	m_LHCircle->Render();
-	m_RHCircle->Render();
+	for (int i = 0; i < 6; i++) {
+		m_LHCircle[i]->Render();
+		m_RHCircle[i]->Render();
+	}
 
 #pragma region PRINTF HANDPOS
 #if _DEBUG
@@ -65,6 +71,8 @@ void CIngameScene::Release()
 {
 	SAFE_DELETE(m_pPictures);
 
-	SAFE_DELETE(m_LHCircle);
-	SAFE_DELETE(m_RHCircle);
+	for (int i = 0; i < 6; i++) {
+		SAFE_DELETE(m_LHCircle[i]);
+		SAFE_DELETE(m_RHCircle[i]);
+	}
 }

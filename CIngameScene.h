@@ -9,8 +9,8 @@ class CIngameScene :
 {
 private:
 
-	CHandCircle * m_RHCircle;
-	CHandCircle * m_LHCircle;
+	CHandCircle * m_RHCircle[6];
+	CHandCircle * m_LHCircle[6];
 
 	CPictures   * m_pPictures;
 

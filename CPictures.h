@@ -30,10 +30,10 @@ public:
 	// Kinect
 
 	// Right Hand Info
-	HandState m_handState;
+	HandState m_handState[6];
 
-	D3DXVECTOR2 m_vHandPosition;
-	D3DXVECTOR2 m_vFirstLockPosition;
+	D3DXVECTOR2 m_vHandPosition[6];
+	D3DXVECTOR2 m_vFirstLockPosition[6];
 public:
 	CPictures();
 	virtual ~CPictures();

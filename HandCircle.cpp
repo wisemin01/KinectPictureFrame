@@ -2,8 +2,9 @@
 #include "HandCircle.h"
 
 
-CHandCircle::CHandCircle(CInputManager::HAND_SET handSet)
-	:m_handSet(handSet)
+CHandCircle::CHandCircle(CInputManager::HAND_SET handSet, int iTargetNum)
+	:m_handSet(handSet),
+	 m_iTargetNumber(iTargetNum)
 {
 	if(m_handSet == CInputManager::HAND_SET::E_HAND_LEFT)
 		m_circle = IMAGEMANAGER->GetTexture("LHCircle", "./Resource/LHCircle.png");
@@ -20,7 +21,7 @@ CHandCircle::~CHandCircle()
 
 void CHandCircle::Update()
 {
-	HandState handState = INPUTMANAGER->GetHandState(0, m_handSet);
+	HandState handState = INPUTMANAGER->GetHandState(m_iTargetNumber, m_handSet);
 
 	switch (handState)
 	{
@@ -34,12 +35,12 @@ void CHandCircle::Update()
 		m_statusColor = D3DCOLOR_XRGB(0, 0, 255);
 		break;
 	default:
-		m_statusColor = D3DCOLOR_XRGB(0, 0, 0);
+		m_statusColor = D3DCOLOR_ARGB(0, 0, 0, 0);
 		break;
 	}
 }
 
 void CHandCircle::Render()
 {
-	m_circle->CenterRender(INPUTMANAGER->GetHandPosition(0, m_handSet), m_statusColor);
+	m_circle->CenterRender(INPUTMANAGER->GetHandPosition(m_iTargetNumber, m_handSet), m_statusColor);
 }
