@@ -1,0 +1,17 @@
+﻿  CPictures.cpp
+c:\users\sm mo\desktop\프로젝트 모음\[ 키넥트 ]\kinectframework\cpictures.cpp(49): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sm mo\desktop\프로젝트 모음\[ 키넥트 ]\kinectframework\cpictures.cpp(50): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sm mo\desktop\프로젝트 모음\[ 키넥트 ]\kinectframework\cpictures.cpp(53): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sm mo\desktop\프로젝트 모음\[ 키넥트 ]\kinectframework\cpictures.cpp(54): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sm mo\desktop\프로젝트 모음\[ 키넥트 ]\kinectframework\cpictures.h(43): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  c:\users\sm mo\desktop\프로젝트 모음\[ 키넥트 ]\kinectframework\cpictures.cpp(132): note: 컴파일 중인 함수 템플릿 인스턴스화 'void CPictures::lerp<int>(T *,const T,const T,const float)'에 대한 참조를 확인하십시오.
+          with
+          [
+              T=int
+          ]
+  코드를 생성하고 있습니다.
+  9 of 1360 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  코드를 생성했습니다.
+  FirstKinectProject_2010.vcxproj -> C:\Users\sm mo\Desktop\프로젝트 모음\[ 키넥트 ]\KinectFrameWork\Release\FirstKinectProject.exe

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns:atg="http://atg.xbox.com" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{8e114980-c1a3-4ada-ad7c-83caadf5daeb}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="DXUT">
+      <UniqueIdentifier>{a43c5c25-0e86-4a20-b64a-883785ff74fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{2c3d4c8c-5d1a-459a-a05a-a4e4b608a44e}</UniqueIdentifier>
+      <Extensions>fx;fxh;hlsl</Extensions>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{3f4c193c-8146-4d83-bcd9-341a0eb2dfb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\InputManager">
+      <UniqueIdentifier>{2e386323-8261-4416-a592-c5ac8ec436a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\TextManager">
+      <UniqueIdentifier>{3dc2449c-7c43-4b4b-abd9-bed9ecf604fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\ImageManager">
+      <UniqueIdentifier>{351e9d93-0ed8-4310-9782-607586ec739c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame">
+      <UniqueIdentifier>{cb7c61c5-9a3c-44d8-95be-8970edb02b76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{904eb483-a991-470c-b276-d7b9991223e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\TestObject">
+      <UniqueIdentifier>{3b6c58c8-8b52-4979-af83-6acfc8b63ef0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\TestObject\HandCircle">
+      <UniqueIdentifier>{e2f38694-0a81-466e-b975-42ae1e24ec42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{690b8c97-56b4-47c6-94ff-3c487a52a9ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\CIngameScene">
+      <UniqueIdentifier>{95201b48-c897-40cd-b27c-ce13754bd572}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\ImageFileLoader">
+      <UniqueIdentifier>{6a69c7dd-ce8d-4cea-aa36-d8caa7bea5f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Pictures">
+      <UniqueIdentifier>{efc6d216-e7ef-46b6-8198-7b9a07933fdd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DXUT\Optional\directx.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <ClInclude Include="DXUT\Core\DXUT.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Core\DXUTenum.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Core\DXUTmisc.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClCompile Include="DXUT\Core\DXUT.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Core\DXUTenum.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Core\DXUTmisc.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClInclude Include="DXUT\Optional\DXUTcamera.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTgui.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTres.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTsettingsdlg.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\SDKmesh.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\SDKmisc.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClCompile Include="DXUT\Optional\DXUTcamera.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTgui.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTres.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTsettingsdlg.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\SDKmesh.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\SDKmisc.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FirstKinectProject.cpp" />
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Manager\InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>Manager\ImageManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TextManager.cpp">
+      <Filter>Manager\TextManager</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="HandCircle.cpp">
+      <Filter>Object\TestObject\HandCircle</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="CIngameScene.cpp">
+      <Filter>Scenes\CIngameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageFileLoader.cpp">
+      <Filter>Object\ImageFileLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CPictures.cpp">
+      <Filter>Object\Pictures</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="singleton.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Manager\InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>Manager\ImageManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TextManager.h">
+      <Filter>Manager\TextManager</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="HandCircle.h">
+      <Filter>Object\TestObject\HandCircle</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="CIngameScene.h">
+      <Filter>Scenes\CIngameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CImageFileLoader.h">
+      <Filter>Object\ImageFileLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="CPictures.h">
+      <Filter>Object\Pictures</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CLInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </CLInclude>
+    <ResourceCompile Include="FirstKinectProject.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
